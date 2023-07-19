@@ -285,6 +285,7 @@ class ReadTrackTask(task.Task):
                     "--sample-offset=%d" % self._offset, ]
         if self._device:
             argv.extend(["--force-cdrom-device", self._device, ])
+        argv.extend(["-S", 10])
         argv.extend(["%d[%s]-%d[%s]" % (
             startTrack, common.framesToHMSF(startOffset),
             stopTrack, common.framesToHMSF(stopOffset)),
